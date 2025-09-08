@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>パスワード生成ツール</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 + ReactDOM (UMD) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Babel（ブラウザ内変換） -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-neutral-50">
+  <div id="root"></div>
+
+  <!-- 🔑 パスワード生成ツール本体 -->
+  <script type="text/babel">
+    // ここにキャンバスで作った PasswordGenerator のコードをペースト
+    // （export default は削除して、function PasswordGenerator(){...} でOK）
+
+    function PasswordGenerator(){
+      // ...キャンバスのコードをそのままここへ貼り付け...
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<PasswordGenerator />);
+  </script>
+
+  <!-- 🔗 楽天アフィリエイトウィジェット -->
+  <div class="max-w-3xl mx-auto my-8">
+    <!-- Rakuten Widget FROM HERE -->
+    <script type="text/javascript">
+    rakuten_affiliateId="0ea62065.34400275.0ea62066.204f04c0";
+    rakuten_items="ctsmatch";
+    rakuten_genreId="0";
+    rakuten_recommend="on";
+    rakuten_design="slide";
+    rakuten_size="728x200";
+    rakuten_target="_blank";
+    rakuten_border="on";
+    rakuten_auto_mode="on";
+    rakuten_adNetworkId="a8Net";
+    rakuten_adNetworkUrl="https%3A%2F%2Frpx.a8.net%2Fsvt%2Fejp%3Fa8mat%3D2I0U4F%2BA4E2A%2B2HOM%2BBS629%26rakuten%3Dy%26a8ejpredirect%3D";
+    rakuten_pointbackId="a15120421815_2I0U4F_A4E2A_2HOM_BS629";
+    rakuten_mediaId="20011816";
+    </script>
+    <script type="text/javascript" src="//xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+    <!-- Rakuten Widget TO HERE -->
+    <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=2I0U4F+A4E2A+2HOM+BS629" alt="">
+  </div>
+</body>
+</html>
