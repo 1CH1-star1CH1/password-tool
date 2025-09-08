@@ -3,27 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>パスワード生成ツール</title>
+
+  <title>パスワード生成ツール｜安全・無料で使えるオンラインジェネレーター</title>
+
+  <!-- ✅ SEO 基本メタ -->
+  <meta name="description" content="シンプルで安全な無料パスワード生成ツール。英字・数字・記号・長さなど自由に設定可能。楽天アフィリエイト情報も同時にチェックできます。" />
+  <meta name="keywords" content="パスワード生成,パスワードジェネレーター,無料,安全,楽天アフィリエイト,オンラインツール" />
+
+  <!-- ✅ OGP (SNSシェア用) -->
+  <meta property="og:title" content="パスワード生成ツール｜安全・無料で使えるオンラインジェネレーター" />
+  <meta property="og:description" content="シンプルで安全な無料パスワード生成ツール。英字・数字・記号・長さなど自由に設定可能。楽天アフィリエイト情報も同時にチェックできます。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourname.github.io/password-gen/" />
+  <meta property="og:image" content="https://yourname.github.io/password-gen/ogp.png" />
+
+  <!-- ✅ Twitterカード -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="パスワード生成ツール｜安全・無料で使えるオンラインジェネレーター" />
+  <meta name="twitter:description" content="強力なパスワードをワンクリックで生成。英字・数字・記号を自由に組み合わせ可能。" />
+  <meta name="twitter:image" content="https://yourname.github.io/password-gen/ogp.png" />
+
+  <!-- ✅ 検索エンジン向け -->
+  <link rel="canonical" href="https://yourname.github.io/password-gen/" />
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- React 18 + ReactDOM (UMD) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <!-- Babel（ブラウザ内変換） -->
+  <!-- Babel -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="bg-neutral-50">
+  <div class="max-w-3xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">無料パスワード生成ツール</h1>
+    <p class="mb-6 text-neutral-700">
+      強力で安全なパスワードをワンクリックで生成できます。英字・数字・記号の組み合わせや長さを自由に設定可能。
+      個人利用やビジネス利用にどうぞ。楽天おすすめ商品も同時にチェックできます。
+    </p>
+  </div>
+
   <div id="root"></div>
 
   <!-- 🔑 パスワード生成ツール本体 -->
   <script type="text/babel">
-    // ここにキャンバスで作った PasswordGenerator のコードをペースト
-    // （export default は削除して、function PasswordGenerator(){...} でOK）
-
     function PasswordGenerator(){
-      // ...キャンバスのコードをそのままここへ貼り付け...
+      const [pw, setPw] = React.useState("");
+      function gen(){
+        const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+        let s = "";
+        for(let i=0;i<16;i++) s+=chars[Math.floor(Math.random()*chars.length)];
+        setPw(s);
+      }
+      return (
+        <div className="max-w-3xl mx-auto bg-white shadow rounded-2xl p-6 mb-8">
+          <div className="flex gap-2 mb-4">
+            <input type="text" value={pw} readOnly
+              className="flex-1 border rounded px-3 py-2 font-mono"/>
+            <button onClick={()=>navigator.clipboard.writeText(pw)}
+              className="px-3 py-2 border rounded">コピー</button>
+          </div>
+          <button onClick={gen}
+            className="px-4 py-2 bg-indigo-600 text-white rounded">生成する</button>
+        </div>
+      );
     }
-
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<PasswordGenerator />);
   </script>
@@ -50,5 +94,9 @@
     <!-- Rakuten Widget TO HERE -->
     <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=2I0U4F+A4E2A+2HOM+BS629" alt="">
   </div>
+
+  <footer class="max-w-3xl mx-auto text-xs text-neutral-500 p-4">
+    <p>© 2025 パスワード生成ツール. このサイトは楽天アフィリエイトを利用しています。</p>
+  </footer>
 </body>
 </html>
